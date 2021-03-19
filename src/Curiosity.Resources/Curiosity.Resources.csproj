@@ -8,9 +8,10 @@
     <PackageId>Curiosity.Resources</PackageId>
     <Title>Library for working with ResX files.</Title>
     <Description>Extracted from Windows.Forms ResXResourceReader and ResXResourceWriter classes with .NET Standard support.</Description>
+    <Summary>Extracted from Windows.Forms ResXResourceReader and ResXResourceWriter classes with .NET Standard support.</Summary>
     <PackageTags>siisltd; curiosity; resx; resxresourcereader; resxresourcewriter</PackageTags>
     
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
     
@@ -39,6 +40,14 @@
     <PackageReference Include="Microsoft.Bcl.HashCode" Version="1.1.0" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <PackageIcon>siisltd.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\siisltd.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Compile Update="SR.Designer.cs">
       <DesignTime>True</DesignTime>
