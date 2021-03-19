@@ -88,7 +88,7 @@ namespace Curiosity.Resources.Tests
             Assert.False(result.Size.IsEmpty);
         }
 
-        [Fact]
+        [Fact(Skip = "Need libgdiplus")]
         public void ConvertFrom_ReadsFileAsIconWhenTypeIsBitmap()
         {
             var resxFilePath = Path.Combine("TestResources", "Files", "Error.ico");
@@ -102,7 +102,7 @@ namespace Curiosity.Resources.Tests
             Assert.Equal(iconResult.Size, bitmapResult.Size);
         }
 
-        [Fact]
+        [Fact(Skip = "Need libgdiplus")]
         public void ConvertFrom_ReadsFileAsBitmap()
         {
             var resxFilePath = Path.Combine("TestResources", "Files", "ErrorControl.bmp");
