@@ -21,7 +21,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Curiosity.Resources\Curiosity.Resources.csproj" />
+    <ProjectReference Include="..\..\src\Curiosity.Resources\Curiosity.Resources.csproj" />
   </ItemGroup>
 
 </Project>
