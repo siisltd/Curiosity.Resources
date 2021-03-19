@@ -4,7 +4,7 @@
 
 using System.Reflection;
 
-namespace System.Resources.NetStandard
+namespace Curiosity.Resources
 {
     internal interface IAliasResolver
     {

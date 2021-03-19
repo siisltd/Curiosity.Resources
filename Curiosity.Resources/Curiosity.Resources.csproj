@@ -6,27 +6,25 @@
 
   <PropertyGroup>
     <!--Nuget Meta: https://docs.microsoft.com/en-us/dotnet/core/tools/csproj -->
-    <PackageId>ResXResourceReader.NetStandard</PackageId>
-    <Title>ResXResourceReader.NetStandard</Title>
-    
+    <PackageId>Curiosity.Resources</PackageId>
+    <Title>Curiosity.Resources</Title>
     <Description>
       System.Resources.ResXResourceReader and System.Resources.ResXResourceWriter separated from System.Windows.Forms and packaged for .Net Standard.
 
       These classes are the baked-in .NET classes to programmatically read/update a ResX file.
     </Description>
-    <Authors>Spencer Farley</Authors>
+    <Authors>Spencer Farley, Andrei Vinogradov</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/farlee2121/ResXResourceReader.NetStandard</RepositoryUrl>
+    <RepositoryUrl>https://github.com/siisltd/Curiosity.Resources</RepositoryUrl>
     <PackageTags>ResX;ResXResourceReader;System.Resources;ResXResourceWriter;netstandard</PackageTags>
   </PropertyGroup>
   
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'" >
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Microsoft.Bcl.HashCode" Version="1.1.0" />
   </ItemGroup>
-  
 
   <ItemGroup>
-    <Compile Update="ResxReader\SR.Designer.cs">
+    <Compile Update="SR.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>SR.resx</DependentUpon>
@@ -34,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ResxReader\SR.resx">
+    <EmbeddedResource Update="SR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SR.Designer.cs</LastGenOutput>
     </EmbeddedResource>

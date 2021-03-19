@@ -2,12 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using System;
 using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
-using System.Numerics;
+using System.Security;
+using System.Threading;
 
-namespace System.Resources.NetStandard
+namespace Curiosity.Resources
 {
     static internal class ClientUtils
     {
@@ -23,7 +25,7 @@ namespace System.Resources.NetStandard
             return ex is NullReferenceException
                     || ex is StackOverflowException
                     || ex is OutOfMemoryException
-                    || ex is Threading.ThreadAbortException
+                    || ex is ThreadAbortException
                     || ex is ExecutionEngineException
                     || ex is IndexOutOfRangeException
                     || ex is AccessViolationException;
@@ -32,7 +34,7 @@ namespace System.Resources.NetStandard
 
         public static bool IsSecurityOrCriticalException(Exception ex)
         {
-            return (ex is Security.SecurityException) || IsCriticalException(ex);
+            return (ex is SecurityException) || IsCriticalException(ex);
         }
 
         public static int GetBitCount(uint x)

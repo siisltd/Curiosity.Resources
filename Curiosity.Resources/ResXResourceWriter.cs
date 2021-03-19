@@ -4,14 +4,16 @@
 
 //#nullable disable
 
+using System;
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Xml;
 
-namespace System.Resources.NetStandard
+namespace Curiosity.Resources
 {
     /// <summary>
     ///  ResX resource writer. See the text in "ResourceSchema" for more
@@ -222,7 +224,7 @@ namespace System.Resources.NetStandard
                 xmlTextWriter.WriteAttributeString(NameStr, ReaderStr);
                 xmlTextWriter.WriteStartElement(ValueStr);
                 {
-                    xmlTextWriter.WriteString(MultitargetUtil.GetAssemblyQualifiedName(typeof(ResXResourceReader), typeNameConverter));
+                    xmlTextWriter.WriteString(ResXConstants.ResHeaderReader);
                 }
                 xmlTextWriter.WriteEndElement();
             }
@@ -232,7 +234,7 @@ namespace System.Resources.NetStandard
                 xmlTextWriter.WriteAttributeString(NameStr, WriterStr);
                 xmlTextWriter.WriteStartElement(ValueStr);
                 {
-                    xmlTextWriter.WriteString(MultitargetUtil.GetAssemblyQualifiedName(typeof(ResXResourceWriter), typeNameConverter));
+                    xmlTextWriter.WriteString(ResXConstants.ResHeaderWriter);
                 }
                 xmlTextWriter.WriteEndElement();
             }

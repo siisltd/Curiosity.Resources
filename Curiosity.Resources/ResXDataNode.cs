@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Xml;
 
-namespace System.Resources.NetStandard
+namespace Curiosity.Resources
 {
     public sealed class ResXDataNode : ISerializable
     {

@@ -4,11 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
-  </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\System.Resources.NetStandard\System.Resources.NetStandard.csproj" />
-  </ItemGroup>
+    <RootNamespace>Curiosity.Resources.Tests</RootNamespace>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
@@ -21,6 +19,9 @@
     <Content Include="TestResources\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Curiosity.Resources\Curiosity.Resources.csproj" />
   </ItemGroup>
 
 </Project>

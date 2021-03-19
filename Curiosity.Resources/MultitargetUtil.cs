@@ -3,7 +3,11 @@
 // See the LICENSE file in the project root for more information.
 
 
-namespace System.Resources.NetStandard
+using System;
+using System.Security;
+using System.Threading;
+
+namespace Curiosity.Resources
 {
     /// <summary>
     ///  Helper class supporting Multitarget type assembly qualified name resolution for ResX API.
@@ -53,11 +57,11 @@ namespace System.Resources.NetStandard
             return ex is NullReferenceException
                     || ex is StackOverflowException
                     || ex is OutOfMemoryException
-                    || ex is Threading.ThreadAbortException
+                    || ex is ThreadAbortException
                     || ex is ExecutionEngineException
                     || ex is IndexOutOfRangeException
                     || ex is AccessViolationException
-                    || ex is Security.SecurityException;
+                    || ex is SecurityException;
         }
 #pragma warning restore 618
     }

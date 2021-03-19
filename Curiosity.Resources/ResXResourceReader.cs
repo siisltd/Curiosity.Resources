@@ -4,6 +4,7 @@
 
 //#nullable disable
 
+using System;
 using System.Collections;
 using System.Collections.Specialized;
 using System.ComponentModel.Design;
@@ -11,10 +12,11 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Resources;
 using System.Runtime.Serialization;
 using System.Xml;
 
-namespace System.Resources.NetStandard
+namespace Curiosity.Resources
 {
     /// <summary>
     ///  ResX resource reader.
@@ -419,24 +421,22 @@ namespace System.Resources.NetStandard
 
             if (resHeaderMimeType == ResXResourceWriter.ResMimeType)
             {
-                Type readerType = typeof(ResXResourceReader);
-                Type writerType = typeof(ResXResourceWriter);
+                string readerTypeName = null;
+                string writerTypeName = null;
 
-                string readerTypeName = resHeaderReaderType;
-                string writerTypeName = resHeaderWriterType;
-                if (readerTypeName != null && readerTypeName.IndexOf(',') != -1)
+                if (resHeaderReaderType != null && resHeaderReaderType.IndexOf(',') != -1)
                 {
-                    readerTypeName = readerTypeName.Split(',')[0].Trim();
+                    readerTypeName = resHeaderReaderType.Split(',')[0].Trim();
                 }
-                if (writerTypeName != null && writerTypeName.IndexOf(',') != -1)
+                if (resHeaderWriterType != null && resHeaderWriterType.IndexOf(',') != -1)
                 {
-                    writerTypeName = writerTypeName.Split(',')[0].Trim();
+                    writerTypeName = resHeaderWriterType.Split(',')[0].Trim();
                 }
 
                 if (readerTypeName != null &&
                     writerTypeName != null &&
-                    readerTypeName.Equals(readerType.FullName) &&
-                    writerTypeName.Equals(writerType.FullName))
+                    readerTypeName.Equals(ResXConstants.ResHeaderReaderTypeName, StringComparison.OrdinalIgnoreCase) &&
+                    writerTypeName.Equals(ResXConstants.ResHeaderWriterTypeName, StringComparison.OrdinalIgnoreCase))
                 {
                     validFile = true;
                 }
