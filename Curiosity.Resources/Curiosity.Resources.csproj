@@ -5,18 +5,29 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <!--Nuget Meta: https://docs.microsoft.com/en-us/dotnet/core/tools/csproj -->
     <PackageId>Curiosity.Resources</PackageId>
-    <Title>Curiosity.Resources</Title>
-    <Description>
-      System.Resources.ResXResourceReader and System.Resources.ResXResourceWriter separated from System.Windows.Forms and packaged for .Net Standard.
+    <Title>Library for working with ResX files.</Title>
+    <Description>Extracted from Windows.Forms ResXResourceReader and ResXResourceWriter classes with .NET Standard support.</Description>
+    <PackageTags>siisltd; curiosity; resx; resxresourcereader; resxresourcewriter</PackageTags>
+    
+    <PackageVersion>1.0.0</PackageVersion>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    
+    <Authors>Spencer Farley, SIIS Ltd (Andrei Vinogradov)</Authors>
+    <Company>SIIS Ltd</Company>
+    <Copyright>SIIS Ltd, 2021</Copyright>
 
-      These classes are the baked-in .NET classes to programmatically read/update a ResX file.
-    </Description>
-    <Authors>Spencer Farley, Andrei Vinogradov</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <PackageProjectUrl>https://github.com/siisltd/Curiosity.Resources</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/siisltd/Curiosity.Resources</RepositoryUrl>
-    <PackageTags>ResX;ResXResourceReader;System.Resources;ResXResourceWriter;netstandard</PackageTags>
+    
+    <LangVersion>8</LangVersion>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
   
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
