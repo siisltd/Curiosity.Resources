@@ -1,25 +1,33 @@
-name: Build
+name: Build and Test Utils
 
 on:
   push:
-    branches: [ master ]
+    branches: [ $default-branch, master ]
   pull_request:
-    branches: [ master ]
+    branches: [ $default-branch, master ]
 
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: [self-hosted, linux]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.101
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      - uses: actions/checkout@v2
+      - name: Clean
+        run: ./build.sh -t Clean --exclusive
+      - name: Build
+        run: ./build.sh -t Build --exclusive
+
+  tests:
+
+    runs-on: [self-hosted, linux]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Clean
+        run: ./build.sh -t Clean --exclusive
+      - name: Unit tests
+        run: ./build.sh -t UnitTests --exclusive
+      - name: Integration tests
+        run: ./build.sh -t IntegrationTests --exclusive
+
