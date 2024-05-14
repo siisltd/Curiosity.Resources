@@ -36,7 +36,7 @@ namespace Curiosity.Resources.Tests
             Assert.Equal(expected, result);
         }
 
-        [Fact]
+        [Fact(Skip = "System.NotSupportedException : Support for UTF-7 is disabled. See https://aka.ms/dotnet-warnings/SYSLIB0001 for more information.")]
         public void ConvertFrom_ReadsFileAsStringUsingEncodingFromRefString()
         {
             var resxFilePath = Path.Combine("TestResources", "Files", "text.utf7.txt");
